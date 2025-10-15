@@ -34,6 +34,7 @@ const DiamondDetailsPage = () => {
     const navigate = useNavigate();
   const backToDiamonds = () => {
     navigate('/diamonds');
+      window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const images = diamond.images?.gallery || [diamond.images?.main];
@@ -44,15 +45,16 @@ const DiamondDetailsPage = () => {
   };
 
   return (
-    <div className="min-h-screen mt-20 bg-white">
+    <div className="min-h-screen mt-36 bg-white">
       {/* Minimal Top Bar */}
       <div className="border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
-         <div className="flex items-center justify-between h-12 mb-4">
+         <div className="md:block hidden md:flex items-center justify-between h-12 md:mb-4">
       {/* Breadcrumbs */}
-      <nav className="flex items-center text-sm text-gray-500">
+      <nav className="flex items-center text-xs md:text-sm text-gray-500">
         <span
           onClick={() => navigate("/")}
+          
           className="cursor-pointer hover:text-gray-900 transition-colors"
         >
           Home
@@ -73,11 +75,18 @@ const DiamondDetailsPage = () => {
       {/* Back Button (Right-aligned) */}
       <button
         onClick={backToDiamonds}
-        className="flex items-center gap-2 text-xs uppercase tracking-wider text-gray-500 hover:text-black transition-colors"
+        className="md:block hidden md:flex items-center gap-2 text-xs uppercase tracking-wider text-gray-500 hover:text-black transition-colors"
       >
         <ArrowLeft className="w-3.5 h-3.5" />
         Back
       </button>
+          {/* <button
+        onClick={backToDiamonds}
+        className="flex items-center md:hidden gap-2 text-xs uppercase tracking-wider border border-gray-500 rounded-full text-gray-500 hover:text-black transition-colors"
+      >
+        <ArrowLeft className="w-3.5 h-3.5" />
+  
+      </button> */}
     </div>
         </div>
       </div>
@@ -271,8 +280,8 @@ const DiamondDetailsPage = () => {
                 { icon: Award, text: 'GIA Certified Authenticity' },
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-4 text-sm text-gray-600">
-                  <item.icon className="w-4 h-4 text-gray-400 flex-shrink-0" />
-                  <span className="font-light">{item.text}</span>
+                  <item.icon className="w-4 h-4 text-gray-800 flex-shrink-0" />
+                  <span className="">{item.text}</span>
                 </div>
               ))}
             </div>
@@ -288,7 +297,7 @@ const DiamondDetailsPage = () => {
                     className={`pb-3 text-xs uppercase tracking-widest whitespace-nowrap transition-colors relative ${
                       activeSection === section
                         ? 'text-gray-900'
-                        : 'text-gray-400 hover:text-gray-600'
+                        : 'text-gray-700 hover:text-gray-900'
                     }`}
                   >
                     {section}
@@ -336,7 +345,7 @@ const DiamondDetailsPage = () => {
                   )}
 
                   {activeSection === 'measurements' && (
-                    <div className="grid grid-cols-2 gap-6">
+                    <div className="grid grid-cols-3 gap-6">
                       {[
                         { label: 'Length', value: `${diamond.measurements.length} mm` },
                         { label: 'Width', value: `${diamond.measurements.width} mm` },
@@ -407,14 +416,14 @@ const DiamondDetailsPage = () => {
             {/* Key Features */}
             {diamond.features && diamond.features.length > 0 && (
               <div className="mt-12 pt-8 border-t border-gray-100">
-                <h3 className="text-xs uppercase tracking-widest text-gray-400 mb-6">
+                <h3 className="text-xs uppercase tracking-widest text-gray-800 mb-6">
                   Key Features
                 </h3>
                 <div className="space-y-3">
                   {diamond.features.map((feature, idx) => (
                     <div key={idx} className="flex items-start gap-3 text-sm text-gray-600">
-                      <div className="w-1 h-1 bg-gray-400 rounded-full mt-2 flex-shrink-0" />
-                      <span className="font-light">{feature}</span>
+                      <div className="w-1 h-1 bg-gray-800 rounded-full mt-2 flex-shrink-0" />
+                      <span className="">{feature}</span>
                     </div>
                   ))}
                 </div>

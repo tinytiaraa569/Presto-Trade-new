@@ -16,12 +16,10 @@ import Layout from "./layout/Layout";
 export default function App() {
   return (
     <Router>
-    
           <div className="min-h-screen flex flex-col bg-gray-50">
-  
         <main className="flex-1">
           <Routes>
-                     <Route element={<Layout />}>
+            <Route element={<Layout />}>
             <Route path="/" element={<Homepage />} />
             <Route path="/diamonds" element={<DiamondPage />} />
             <Route path="/diamonds/:id" element={<DiamondDetailsPage />} />
@@ -29,14 +27,10 @@ export default function App() {
               <Route path="/jewelry/rings" element={<JewelryPage />} />
             <Route path="/jewelry/rings/:id" element={<JewelryDetailPage />} />
             <Route path="/lux" element={<VraiHomepage />} />
-
             </Route>
           </Routes>
         </main>
-
-
       </div>
-
     </Router>
   );
 }

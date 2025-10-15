@@ -8,6 +8,8 @@ const DiamondListItem = ({ diamond, isFavorite, onToggleFavorite, index }) => {
 
   const handleViewDetails = () => {
     navigate(`/diamonds/${diamond.id}`);
+    
+  window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -15,12 +17,12 @@ const DiamondListItem = ({ diamond, isFavorite, onToggleFavorite, index }) => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.02 }}
-      onClick={handleViewDetails}
+  
       className="bg-white border border-gray-200 hover:border-gray-400 transition-all duration-200 rounded-lg overflow-hidden"
     >
       <div className="flex items-center p-4 gap-6">
         {/* Left: Basic Info */}
-        <div className="flex-shrink-0 min-w-[280px]">
+        <div     onClick={handleViewDetails} className="flex-shrink-0 min-w-[280px]">
           <div className="flex items-start gap-2 mb-1.5">
             <h3 className="text-sm font-medium text-gray-900 leading-tight flex-1">{diamond.name}</h3>
             {diamond.badge && (

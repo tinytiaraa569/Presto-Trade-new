@@ -205,7 +205,7 @@ const JewelryDetailPage = () => {
   }, [images.length]);
 
   return (
-    <div className="bg-white mt-20 min-h-screen">
+    <div className="bg-white mt-36 min-h-screen">
       <SizeGuideModal />
 
       {/* Sticky Header */}

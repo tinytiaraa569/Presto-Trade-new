@@ -44,6 +44,7 @@ const ProductCard = ({
   // Handle navigation to product detail page
   const handleProductClick = () => {
     navigate(`/jewelry/${productType}/${product.id}`);
+      window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   // Handle favorite toggle

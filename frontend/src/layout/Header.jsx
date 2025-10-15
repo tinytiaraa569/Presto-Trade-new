@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, ChevronDown, Menu, X, Search, User, Mail, Phone, MapPin, Award, Shield, Gem, Clock, Heart, ShoppingBag, LogIn } from 'lucide-react';
-
+import { useNavigate } from 'react-router-dom';
 
 const messages = [
   "✨ FREE SHIPPING WORLDWIDE ✨",
@@ -45,10 +45,39 @@ const messages = [
 
 
 const Header = () => {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
   const [mobileExpandedMenu, setMobileExpandedMenu] = useState(null);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % messages.length);
+    }, 3000); // change message every 3 seconds
+    return () => clearInterval(interval);
+  }, []);
+
+const handleNavigation = (title) => {
+  const lowerTitle = title.toLowerCase();
+
+  if (lowerTitle === "diamonds") {
+    navigate("/diamonds");
+  } else if (lowerTitle === "jewelry") {
+    navigate("/jewelry");
+  } else if (lowerTitle === "rings") {
+    navigate("/jewelry/rings");
+  } else {
+    navigate("/");
+  }
+
+  // Close menu and scroll to top
+  setMenuOpen(false);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -253,26 +282,34 @@ const Header = () => {
       <motion.header 
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 w-full z-50 transition-all duration-300 bg-white shadow-sm shadow-gray-300 ${
+        className={`fixed top-0 w-full z-50  transition-all duration-300 bg-white shadow-sm shadow-gray-300 ${
           scrolled ? '' : ''
         }`}
       >
-
-        <div className="mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
-          <button className="lg:hidden z-50" onClick={() => setMenuOpen(!menuOpen)}>
+   
+        <div className="w-full px-6 md:px-6 py-5 gap-4 flex flex-col">
+           <motion.div 
+            whileHover={{ opacity: 0.6 }}
+            className={`text-base text-center text-nowrap md:text-xl font-medium tracking-[0.3em] absolute left-1/2 -translate-x-1/2 lg:relative lg:left-0 lg:translate-x-0 ${scrolled ? 'hidden' : ''}`}
+          >
+            
+            <a href="/">PRESTO TRADE</a>
+          </motion.div>
+          <div className='flex items-center justify-between'>
+ <button className="lg:hidden z-50" onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
             <Search className="w-5 h-5 md:hidden absolute left-16" />
           
           <motion.div 
             whileHover={{ opacity: 0.6 }}
-            className="text-base text-nowrap md:text-xl font-medium tracking-[0.3em] absolute left-1/2 -translate-x-1/2 lg:relative lg:left-0 lg:translate-x-0"
+            className={`text-base text-nowrap  md:text-xl font-medium tracking-[0.3em] absolute left-1/2 -translate-x-1/2 lg:relative lg:left-0 lg:translate-x-0 ${scrolled ? '' : 'hidden'}`}
           >
             
             <a href="/">PRESTO TRADE</a>
           </motion.div>
 
-          <nav className="hidden lg:flex items-center space-x-12 text-sm tracking-wider">
+          <nav className="hidden ml-20 w-full justify-center lg:flex items-center space-x-12 text-sm tracking-wider">
             {Object.keys(menuData).map((key) => (
               <div
                 key={key}
@@ -282,7 +319,7 @@ const Header = () => {
                 >
                 <a 
                   href={menuData[key].path} 
-                  className="relative   transition-opacity capitalize inline-block"
+                  className="relative font-normal text-gray-800 tracking-[0.2em] transition-opacity capitalize inline-block"
                 >
                   {menuData[key].title}
                   <motion.div
@@ -310,7 +347,10 @@ const Header = () => {
               <ShoppingBag className="w-5 h-5" />
             </button>
           </div>
+          </div>
+         
         </div>
+    
 
         {/* Desktop Mega Menu */}
         <AnimatePresence>
@@ -449,14 +489,19 @@ const Header = () => {
                   </div> */}
 
                   {/* Main Navigation */}
-                  <nav className="space-y-2">
+                  <nav className="space-y-2 overflow-x-auto">
                     {Object.keys(menuData).map((key) => (
                       <div key={key} className="border-b">
                         <button
                           onClick={() => toggleMobileSubmenu(key)}
                           className="flex items-center justify-between w-full py-4 text-sm tracking-wider hover:opacity-60 transition-opacity"
                         >
-                          <span className="capitalize font-medium">{menuData[key].title}</span>
+                      <span
+      className="capitalize font-medium cursor-pointer hover:text-black transition-colors"
+      onClick={() => handleNavigation(menuData[key].title)}
+    >
+      {menuData[key].title}
+    </span>
                           <motion.div
                             animate={{ rotate: mobileExpandedMenu === key ? 180 : 0 }}
                             transition={{ duration: 0.3 }}
@@ -544,8 +589,8 @@ const Header = () => {
                       <span>Contact Us</span>
                     </motion.a>
                   </div> */}
-                  
-                <div className="absolute w-[90%] bottom-4 left-0 flex items-center justify-center">
+                  {/* <div className='mt-20 fixed bg-white bottom-10 left-0 h-9'></div> */}
+                <div className=" fixed w-[75%] bg-white bottom-4 left-0 right-0 flex z-50 items-center justify-center">
       <motion.button
         whileHover={{ x: 4 }}
         
