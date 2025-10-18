@@ -321,7 +321,7 @@ const handleToggle = (section, e) => {
     filters.certification.length;
 
   return (
-    <div className="min-h-screen mt-32 bg-white">
+    <div className="min-h-screen  bg-white">
       {/* Top Bar */}
       <div className="border-b border-gray-200">
         <div className="max-w-[1600px] mx-auto px-8 py-6">

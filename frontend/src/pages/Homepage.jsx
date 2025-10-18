@@ -512,7 +512,7 @@ export default function Homepage() {
         </div>
       </section>
       {/* Trust Indicators */}
-      <section className="py-8 px-6 md:px-12 border-b">
+      {/* <section className="py-8 px-6 md:px-12 border-b">
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-center">
           {[
             {
@@ -558,7 +558,7 @@ export default function Homepage() {
             </motion.div>
           ))}
         </div>
-      </section>
+      </section> */}
       {/* Three Feature Cards */}
       {/* <section className="py-12 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">

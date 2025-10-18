@@ -12,6 +12,7 @@ import DiamondDetailsPage from "./pages/DiamondDetailsPage";
 // import AboutPage from "./pages/AboutPage";
 // import ContactPage from "./pages/ContactPage";
 import Layout from "./layout/Layout";
+import PrestoHomepage from "./pages/PrestoHomePage";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route element={<Layout />}>
+              <Route path="/v2" element={<PrestoHomepage />} />
             <Route path="/" element={<Homepage />} />
             <Route path="/diamonds" element={<DiamondPage />} />
             <Route path="/diamonds/:id" element={<DiamondDetailsPage />} />

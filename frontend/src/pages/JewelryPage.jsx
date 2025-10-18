@@ -231,7 +231,7 @@ const JewelryPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className="border-b border-gray-200 bg-white"
+        className={`border-b border-gray-200 bg-white z-40  ${isSticky ? 'sticky top-20' : ''}`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-center gap-8 overflow-x-auto">
@@ -254,7 +254,7 @@ const JewelryPage = () => {
       </motion.div>
 
       {/* Desktop Filter Bar */}
-      <div className={`border-b border-gray-300 ${isSticky ? 'sticky top-16' : ''} bg-white z-40 hidden md:block transition-all duration-300`}>
+      <div className={`border-b border-gray-300 bg-white z-40 hidden md:block transition-all duration-300  ${isSticky ? 'sticky top-32' : ''}`}>
         <div className="max-w-7xl mx-auto pl-6 py-4">
           <div className="flex items-center divide-x-2 divide-gray-300 justify-between">
             {/* Center Filters */}
@@ -524,7 +524,7 @@ const JewelryPage = () => {
 
       {/* Bottom Banner */}
       <motion.div
-        id="bottom-banner"
+       
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
@@ -575,7 +575,7 @@ const JewelryPage = () => {
       </motion.div>
 
       {/* Trust Indicators */}
-      <section className="py-16 px-6 md:px-12 border-t">
+      <section  id="bottom-banner" className="py-16 px-6 md:px-12 border-t">
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-8 text-center">
           {[
             { icon: Award, title: "PREMIUM QUALITY", desc: "Handcrafted with finest materials" },

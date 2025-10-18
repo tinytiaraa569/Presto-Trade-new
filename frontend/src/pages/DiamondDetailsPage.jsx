@@ -45,7 +45,7 @@ const DiamondDetailsPage = () => {
   };
 
   return (
-    <div className="min-h-screen mt-36 bg-white">
+    <div className="min-h-screen  bg-white">
       {/* Minimal Top Bar */}
       <div className="border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
