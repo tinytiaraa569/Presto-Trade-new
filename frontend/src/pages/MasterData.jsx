@@ -1,36 +1,163 @@
 // Import all ring images
-import five_hoops from "../assets/rings/five_hoops_ring.png";
-import five_hoops_hand from "../assets/rings/five_hoops_ring_hand.png";
-import double_sliding_hoops from "../assets/rings/double_sliding_hoops_ring.png";
-import double_sliding_hoops_hand from "../assets/rings/double_sliding_hoops_ring_hand.png";
-import triple_sliding_hoops_white_gold from "../assets/rings/triple_sliding_hoops_ring_white_gold.png";
-import triple_sliding_hoops_white_gold_hand from "../assets/rings/triple_sliding_hoops_ring_white_gold_hand.png";
-import triple_sliding_hoops_rose_gold from "../assets/rings/triple_sliding_hoops_ring_rose_gold.png";
-import triple_sliding_hoops_rose_gold_hand from "../assets/rings/triple_sliding_hoops_ring_rose_gold_hand.png";
-import linear_pave from "../assets/rings/linear_pave_ring.png";
-import linear_pave_hand from "../assets/rings/linear_pave_ring_hand.png";
-import baby_snow_white_gold from "../assets/rings/baby_snow_ring_white_gold.png";
-import baby_snow_white_gold_hand from "../assets/rings/baby_snow_ring_white_gold_hand.png";
-import statement_galet from "../assets/rings/statement_galet_ring.png";
-import statement_galet_hand from "../assets/rings/statement_galet_ring_hand.png";
-import wavy_gold from "../assets/rings/wavy_gold_ring.png";
-import wavy_gold_hand from "../assets/rings/wavy_gold_ring_hand.png";
-import love_morse_code from "../assets/rings/love_morse_code_ring.png";
-import love_morse_code_hand from "../assets/rings/love_morse_code_ring_hand.png";
-import up_and_down_white_gold from "../assets/rings/up_and_down_ring_white_gold.png";
-import up_and_down_white_gold_hand from "../assets/rings/up_and_down_ring_white_gold_hand.png";
-import up_and_down_rose_gold from "../assets/rings/up_and_down_ring_rose_gold.png";
-import up_and_down_rose_gold_hand from "../assets/rings/up_and_down_ring_rose_gold_hand.png";
-import triple_sliding_hoops_diamond_rose_gold from "../assets/rings/triple_sliding_hoops_diamond_ring_rose_gold.png";
-import triple_sliding_hoops_diamond_rose_gold_hand from "../assets/rings/triple_sliding_hoops_diamond_ring_rose_gold_hand.png";
-import triple_sliding_hoops_diamond_white_gold from "../assets/rings/triple_sliding_hoops_diamond_ring_white_gold.png";
-import triple_sliding_hoops_diamond_white_gold_hand from "../assets/rings/triple_sliding_hoops_diamond_ring_white_gold_hand.png";
-import triple_sliding_hoops_diamond_yellow_gold from "../assets/rings/triple_sliding_hoops_diamond_ring_yellow_gold.png";
-import triple_sliding_hoops_diamond_yellow_gold_hand from "../assets/rings/triple_sliding_hoops_diamond_ring_yellow_gold_hand.png";
-import linear_chain from "../assets/rings/linear_chain_ring.png";
-import linear_chain_hand from "../assets/rings/linear_chain_ring_hand.png";
-import dome_ring from "../assets/rings/dome_ring.png";
-import dome_ring_hand from "../assets/rings/dome_ring_hand.png";
+// import five_hoops from "../assets/rings/five_hoops_ring.png";
+// import five_hoops_hand from "../assets/rings/five_hoops_ring_hand.png";
+// import double_sliding_hoops from "../assets/rings/double_sliding_hoops_ring.png";
+// import double_sliding_hoops_hand from "../assets/rings/double_sliding_hoops_ring_hand.png";
+// import triple_sliding_hoops_white_gold from "../assets/rings/triple_sliding_hoops_ring_white_gold.png";
+// import triple_sliding_hoops_white_gold_hand from "../assets/rings/triple_sliding_hoops_ring_white_gold_hand.png";
+// import triple_sliding_hoops_rose_gold from "../assets/rings/triple_sliding_hoops_ring_rose_gold.png";
+// import triple_sliding_hoops_rose_gold_hand from "../assets/rings/triple_sliding_hoops_ring_rose_gold_hand.png";
+// import linear_pave from "../assets/rings/linear_pave_ring.png";
+// import linear_pave_hand from "../assets/rings/linear_pave_ring_hand.png";
+// import baby_snow_white_gold from "../assets/rings/baby_snow_ring_white_gold.png";
+// import baby_snow_white_gold_hand from "../assets/rings/baby_snow_ring_white_gold_hand.png";
+// import statement_galet from "../assets/rings/statement_galet_ring.png";
+// import statement_galet_hand from "../assets/rings/statement_galet_ring_hand.png";
+// import wavy_gold from "../assets/rings/wavy_gold_ring.png";
+// import wavy_gold_hand from "../assets/rings/wavy_gold_ring_hand.png";
+// import love_morse_code from "../assets/rings/love_morse_code_ring.png";
+// import love_morse_code_hand from "../assets/rings/love_morse_code_ring_hand.png";
+// import up_and_down_white_gold from "../assets/rings/up_and_down_ring_white_gold.png";
+// import up_and_down_white_gold_hand from "../assets/rings/up_and_down_ring_white_gold_hand.png";
+// import up_and_down_rose_gold from "../assets/rings/up_and_down_ring_rose_gold.png";
+// import up_and_down_rose_gold_hand from "../assets/rings/up_and_down_ring_rose_gold_hand.png";
+// import triple_sliding_hoops_diamond_rose_gold from "../assets/rings/triple_sliding_hoops_diamond_ring_rose_gold.png";
+// import triple_sliding_hoops_diamond_rose_gold_hand from "../assets/rings/triple_sliding_hoops_diamond_ring_rose_gold_hand.png";
+// import triple_sliding_hoops_diamond_white_gold from "../assets/rings/triple_sliding_hoops_diamond_ring_white_gold.png";
+// import triple_sliding_hoops_diamond_white_gold_hand from "../assets/rings/triple_sliding_hoops_diamond_ring_white_gold_hand.png";
+// import triple_sliding_hoops_diamond_yellow_gold from "../assets/rings/triple_sliding_hoops_diamond_ring_yellow_gold.png";
+// import triple_sliding_hoops_diamond_yellow_gold_hand from "../assets/rings/triple_sliding_hoops_diamond_ring_yellow_gold_hand.png";
+// import linear_chain from "../assets/rings/linear_chain_ring.png";
+// import linear_chain_hand from "../assets/rings/linear_chain_ring_hand.png";
+// import dome_ring from "../assets/rings/dome_ring.png";
+// import dome_ring_hand from "../assets/rings/dome_ring_hand.png";
+
+// ===== PTR001 =====
+import five_hoops from "../assets/Ring/PTR001/PTR001_P.png";
+import five_hoops_hand from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT.png";
+import five_hoops_bottom from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT_bottom.png";
+import five_hoops_top from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT_top.png";
+import five_hoops_right from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT_right.png";
+import five_hoops_left from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT_left.png";
+import five_hoops_front from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT_front.png";
+import five_hoops_back from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT_back.png";
+
+import double_sliding_hoops from "../assets/Ring/PTR001/PTR001.png";
+import double_sliding_hoops_hand from "../assets/Ring/PTR001/PTR001-RTR_Yellow_18KT.png";
+import double_sliding_hoops_top from "../assets/Ring/PTR001/PTR001-RTR_Yellow_18KT_top.png";
+import double_sliding_hoops_bottom from "../assets/Ring/PTR001/PTR001-RTR_Yellow_18KT_bottom.png";
+import double_sliding_hoops_right from "../assets/Ring/PTR001/PTR001-RTR_Yellow_18KT_right.png";
+import double_sliding_hoops_left from "../assets/Ring/PTR001/PTR001-RTR_Yellow_18KT_left.png";
+
+import triple_sliding_hoops_white_gold from "../assets/Ring/PTR001/PTR001_W.png";
+import triple_sliding_hoops_white_gold_hand from "../assets/Ring/PTR001/PTR001-RTR_White_18KT.png";
+import triple_sliding_hoops_white_gold_top from "../assets/Ring/PTR001/PTR001-RTR_White_18KT_top.png";
+import triple_sliding_hoops_white_gold_bottom from "../assets/Ring/PTR001/PTR001-RTR_White_18KT_bottom.png";
+import triple_sliding_hoops_white_gold_left from "../assets/Ring/PTR001/PTR001-RTR_White_18KT_left.png";
+import triple_sliding_hoops_white_gold_right from "../assets/Ring/PTR001/PTR001-RTR_White_18KT_right.png";
+
+import triple_sliding_hoops_rose_gold from "../assets/Ring/PTR001/PTR001_P.png";
+import triple_sliding_hoops_rose_gold_hand from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT.png";
+import triple_sliding_hoops_rose_gold_top from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT_top.png";
+import triple_sliding_hoops_rose_gold_bottom from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT_bottom.png";
+import triple_sliding_hoops_rose_gold_left from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT_left.png";
+import triple_sliding_hoops_rose_gold_right from "../assets/Ring/PTR001/PTR001-RTR_Rose_18KT_right.png";
+
+// ===== PTR005 =====
+import linear_pave from "../assets/Ring/PTR005/PTR005_W.png";
+import linear_pave_hand from "../assets/Ring/PTR005/PTR005-RTR_White_18KT.png";
+import linear_pave_top from "../assets/Ring/PTR005/PTR005-RTR_White_18KT_top.png";
+import linear_pave_bottom from "../assets/Ring/PTR005/PTR005-RTR_White_18KT_bottom.png";
+import linear_pave_left from "../assets/Ring/PTR005/PTR005-RTR_White_18KT_left.png";
+import linear_pave_right from "../assets/Ring/PTR005/PTR005-RTR_White_18KT_right.png";
+
+import linear_chain from "../assets/Ring/PTR005/PTR005.png";
+import linear_chain_hand from "../assets/Ring/PTR005/PTR005-RTR_Yellow_18KT.png";
+import linear_chain_top from "../assets/Ring/PTR005/PTR005-RTR_Yellow_18KT_top.png";
+import linear_chain_bottom from "../assets/Ring/PTR005/PTR005-RTR_Yellow_18KT_bottom.png";
+import linear_chain_left from "../assets/Ring/PTR005/PTR005-RTR_Yellow_18KT_left.png";
+import linear_chain_right from "../assets/Ring/PTR005/PTR005-RTR_Yellow_18KT_right.png";
+
+import love_morse_code from "../assets/Ring/PTR005/PTR005_P.png";
+import love_morse_code_hand from "../assets/Ring/PTR005/PTR005-RTR_Rose_18KT.png";
+import love_morse_code_top from "../assets/Ring/PTR005/PTR005-RTR_Rose_18KT_top.png";
+import love_morse_code_bottom from "../assets/Ring/PTR005/PTR005-RTR_Rose_18KT_bottom.png";
+import love_morse_code_left from "../assets/Ring/PTR005/PTR005-RTR_Rose_18KT_left.png";
+import love_morse_code_right from "../assets/Ring/PTR005/PTR005-RTR_Rose_18KT_right.png";
+
+// ===== PTR006 =====
+import baby_snow_white_gold from "../assets/Ring/PTR006/PTR006_W.png";
+import baby_snow_white_gold_hand from "../assets/Ring/PTR006/PTR006-RTR_White_18KT.png";
+import baby_snow_white_gold_top from "../assets/Ring/PTR006/PTR006-RTR_White_18KT_top.png";
+import baby_snow_white_gold_bottom from "../assets/Ring/PTR006/PTR006-RTR_White_18KT_bottom.png";
+import baby_snow_white_gold_left from "../assets/Ring/PTR006/PTR006-RTR_White_18KT_left.png";
+import baby_snow_white_gold_right from "../assets/Ring/PTR006/PTR006-RTR_White_18KT_right.png";
+
+import baby_snow_yellow_gold from "../assets/Ring/PTR006/PTR006.png";
+import baby_snow_yellow_gold_hand from "../assets/Ring/PTR006/PTR006-RTR_Yellow_18KT.png";
+import baby_snow_yellow_gold_top from "../assets/Ring/PTR006/PTR006-RTR_Yellow_18KT_top.png";
+import baby_snow_yellow_gold_bottom from "../assets/Ring/PTR006/PTR006-RTR_Yellow_18KT_bottom.png";
+import baby_snow_yellow_gold_left from "../assets/Ring/PTR006/PTR006-RTR_Yellow_18KT_left.png";
+import baby_snow_yellow_gold_right from "../assets/Ring/PTR006/PTR006-RTR_Yellow_18KT_right.png";
+
+import statement_galet from "../assets/Ring/PTR006/PTR006_P.png";
+import statement_galet_hand from "../assets/Ring/PTR006/PTR006-RTR_Rose_18KT.png";
+import statement_galet_top from "../assets/Ring/PTR006/PTR006-RTR_Rose_18KT_top.png";
+import statement_galet_bottom from "../assets/Ring/PTR006/PTR006-RTR_Rose_18KT_bottom.png";
+import statement_galet_left from "../assets/Ring/PTR006/PTR006-RTR_Rose_18KT_left.png";
+import statement_galet_right from "../assets/Ring/PTR006/PTR006-RTR_Rose_18KT_right.png";
+
+import wavy_gold from "../assets/Ring/PTR006/PTR006.png";
+import wavy_gold_hand from "../assets/Ring/PTR006/PTR006-RTR_Yellow_18KT.png";
+import wavy_gold_top from "../assets/Ring/PTR006/PTR006-RTR_Yellow_18KT_top.png";
+import wavy_gold_bottom from "../assets/Ring/PTR006/PTR006-RTR_Yellow_18KT_bottom.png";
+import wavy_gold_left from "../assets/Ring/PTR006/PTR006-RTR_Yellow_18KT_left.png";
+import wavy_gold_right from "../assets/Ring/PTR006/PTR006-RTR_Yellow_18KT_right.png";
+
+// ===== PTR002 =====
+import up_and_down_white_gold from "../assets/Ring/PTR002/PTR002_W.png";
+import up_and_down_white_gold_hand from "../assets/Ring/PTR002/PTR002-RTR1_White_18KT.png";
+import up_and_down_white_gold_top from "../assets/Ring/PTR002/PTR002-RTR1_White_18KT_top.png";
+import up_and_down_white_gold_bottom from "../assets/Ring/PTR002/PTR002-RTR1_White_18KT_bottom.png";
+import up_and_down_white_gold_left from "../assets/Ring/PTR002/PTR002-RTR1_White_18KT_left.png";
+import up_and_down_white_gold_right from "../assets/Ring/PTR002/PTR002-RTR1_White_18KT_right.png";
+
+import up_and_down_rose_gold from "../assets/Ring/PTR002/PTR002_P.png";
+import up_and_down_rose_gold_hand from "../assets/Ring/PTR002/PTR002-RTR1_Rose_18KT.png";
+import up_and_down_rose_gold_top from "../assets/Ring/PTR002/PTR002-RTR1_Rose_18KT_top.png";
+import up_and_down_rose_gold_bottom from "../assets/Ring/PTR002/PTR002-RTR1_Rose_18KT_bottom.png";
+import up_and_down_rose_gold_left from "../assets/Ring/PTR002/PTR002-RTR1_Rose_18KT_left.png";
+import up_and_down_rose_gold_right from "../assets/Ring/PTR002/PTR002-RTR1_Rose_18KT_right.png";
+
+import dome_ring from "../assets/Ring/PTR002/PTR002.png";
+import dome_ring_hand from "../assets/Ring/PTR002/PTR002-RTR1_Yellow_18KT.png";
+import dome_ring_top from "../assets/Ring/PTR002/PTR002-RTR1_Yellow_18KT_top.png";
+import dome_ring_bottom from "../assets/Ring/PTR002/PTR002-RTR1_Yellow_18KT_bottom.png";
+import dome_ring_left from "../assets/Ring/PTR002/PTR002-RTR1_Yellow_18KT_left.png";
+import dome_ring_right from "../assets/Ring/PTR002/PTR002-RTR1_Yellow_18KT_right.png";
+
+// ===== PTR004 =====
+import triple_sliding_hoops_diamond_rose_gold from "../assets/Ring/PTR004/PTR004_P.png";
+import triple_sliding_hoops_diamond_rose_gold_hand from "../assets/Ring/PTR004/PTR004-RTR_Rose_18KT.png";
+import triple_sliding_hoops_diamond_rose_gold_top from "../assets/Ring/PTR004/PTR004-RTR_Rose_18KT_top.png";
+import triple_sliding_hoops_diamond_rose_gold_bottom from "../assets/Ring/PTR004/PTR004-RTR_Rose_18KT_bottom.png";
+import triple_sliding_hoops_diamond_rose_gold_left from "../assets/Ring/PTR004/PTR004-RTR_Rose_18KT_left.png";
+import triple_sliding_hoops_diamond_rose_gold_right from "../assets/Ring/PTR004/PTR004-RTR_Rose_18KT_right.png";
+
+import triple_sliding_hoops_diamond_white_gold from "../assets/Ring/PTR004/PTR004_W.png";
+import triple_sliding_hoops_diamond_white_gold_hand from "../assets/Ring/PTR004/PTR004-RTR_White_18KT.png";
+import triple_sliding_hoops_diamond_white_gold_top from "../assets/Ring/PTR004/PTR004-RTR_White_18KT_top.png";
+import triple_sliding_hoops_diamond_white_gold_bottom from "../assets/Ring/PTR004/PTR004-RTR_White_18KT_bottom.png";
+import triple_sliding_hoops_diamond_white_gold_left from "../assets/Ring/PTR004/PTR004-RTR_White_18KT_left.png";
+import triple_sliding_hoops_diamond_white_gold_right from "../assets/Ring/PTR004/PTR004-RTR_White_18KT_right.png";
+
+import triple_sliding_hoops_diamond_yellow_gold from "../assets/Ring/PTR004/PTR004.png";
+import triple_sliding_hoops_diamond_yellow_gold_hand from "../assets/Ring/PTR004/PTR004-RTR_Yellow_18KT.png";
+import triple_sliding_hoops_diamond_yellow_gold_top from "../assets/Ring/PTR004/PTR004-RTR_Yellow_18KT_top.png";
+import triple_sliding_hoops_diamond_yellow_gold_bottom from "../assets/Ring/PTR004/PTR004-RTR_Yellow_18KT_bottom.png";
+import triple_sliding_hoops_diamond_yellow_gold_left from "../assets/Ring/PTR004/PTR004-RTR_Yellow_18KT_left.png";
+import triple_sliding_hoops_diamond_yellow_gold_right from "../assets/Ring/PTR004/PTR004-RTR_Yellow_18KT_right.png";
+
 
 // Categories for Rings
 export const ringCategories = [
@@ -74,7 +201,8 @@ export const ringProducts = [
     images: {
       'Yellow Gold': {
         main: five_hoops,
-        hover: five_hoops_hand
+        hover: five_hoops_hand,
+        gallery:[five_hoops_bottom,five_hoops_top,five_hoops_right,five_hoops_left]
       }
     }
   },
@@ -96,7 +224,10 @@ export const ringProducts = [
     images: {
       'Yellow Gold': {
         main: double_sliding_hoops,
-        hover: double_sliding_hoops_hand
+        hover: double_sliding_hoops_hand,
+        gallery:[
+          double_sliding_hoops_top,double_sliding_hoops_bottom,double_sliding_hoops_left,double_sliding_hoops_right
+        ]
       }
     }
   },
@@ -118,44 +249,66 @@ export const ringProducts = [
     images: {
       'White Gold': {
         main: triple_sliding_hoops_white_gold,
-        hover: triple_sliding_hoops_white_gold_hand
+        hover: triple_sliding_hoops_white_gold_hand,
+        gallery:[triple_sliding_hoops_white_gold_top,triple_sliding_hoops_white_gold_bottom,triple_sliding_hoops_white_gold_right,triple_sliding_hoops_white_gold_left]
       },
       'Rose Gold': {
         main: triple_sliding_hoops_rose_gold,
-        hover: triple_sliding_hoops_rose_gold_hand
+        hover: triple_sliding_hoops_rose_gold_hand,
+        gallery:[triple_sliding_hoops_rose_gold_top,triple_sliding_hoops_rose_gold_bottom,triple_sliding_hoops_rose_gold_left,triple_sliding_hoops_rose_gold_right]
       }
     }
   },
-  {
-    id: 4,
-    type: 'ring',
-    name: 'Diamond Triple Ring with Sliding Hoops',
-    price: 182,
-    badge: null,
-    category: 'Pave',
-    metalColors: ['Rose Gold', 'White Gold', 'Yellow Gold'],
-    material: 'Sterling silver',
-    stone: 'Diamond',
-    collection: 'Modern',
-    style: 'Ornate',
-    availableSizes: ['48', '50', '52', '54', '56', '58', '60'],
-    description: 'Elevated with sparkling pavé diamonds, this triple hoop design combines movement with brilliance. A luxurious take on our signature style.',
-    sku: 'A23704RG-052',
-    images: {
-      'Rose Gold': {
-        main: triple_sliding_hoops_diamond_rose_gold,
-        hover: triple_sliding_hoops_diamond_rose_gold_hand
-      },
-      'White Gold': {
-        main: triple_sliding_hoops_diamond_white_gold,
-        hover: triple_sliding_hoops_diamond_white_gold_hand
-      },
-      'Yellow Gold': {
-        main: triple_sliding_hoops_diamond_yellow_gold,
-        hover: triple_sliding_hoops_diamond_yellow_gold_hand
-      }
+{
+  id: 4,
+  type: 'ring',
+  name: 'Diamond Triple Ring with Sliding Hoops',
+  price: 182,
+  badge: null,
+  category: 'Pave',
+  metalColors: ['Rose Gold', 'White Gold', 'Yellow Gold'],
+  material: 'Sterling silver',
+  stone: 'Diamond',
+  collection: 'Modern',
+  style: 'Ornate',
+  availableSizes: ['48', '50', '52', '54', '56', '58', '60'],
+  description:
+    'Elevated with sparkling pavé diamonds, this triple hoop design combines movement with brilliance. A luxurious take on our signature style.',
+  sku: 'A23704RG-052',
+  images: {
+    'Rose Gold': {
+      main: triple_sliding_hoops_diamond_rose_gold,
+      hover: triple_sliding_hoops_diamond_rose_gold_hand,
+      gallery: [
+        triple_sliding_hoops_diamond_rose_gold_top,
+        triple_sliding_hoops_diamond_rose_gold_bottom,
+        triple_sliding_hoops_diamond_rose_gold_left,
+        triple_sliding_hoops_diamond_rose_gold_right
+      ]
+    },
+    'White Gold': {
+      main: triple_sliding_hoops_diamond_white_gold,
+      hover: triple_sliding_hoops_diamond_white_gold_hand,
+      gallery: [
+        triple_sliding_hoops_diamond_white_gold_top,
+        triple_sliding_hoops_diamond_white_gold_bottom,
+        triple_sliding_hoops_diamond_white_gold_left,
+        triple_sliding_hoops_diamond_white_gold_right
+      ]
+    },
+    'Yellow Gold': {
+      main: triple_sliding_hoops_diamond_yellow_gold,
+      hover: triple_sliding_hoops_diamond_yellow_gold_hand,
+      gallery: [
+        triple_sliding_hoops_diamond_yellow_gold_top,
+        triple_sliding_hoops_diamond_yellow_gold_bottom,
+        triple_sliding_hoops_diamond_yellow_gold_left,
+        triple_sliding_hoops_diamond_yellow_gold_right
+      ]
     }
-  },
+  }
+},
+
   {
     id: 5,
     type: 'ring',
@@ -174,7 +327,8 @@ export const ringProducts = [
     images: {
       'Yellow Gold': {
         main: linear_pave,
-        hover: linear_pave_hand
+        hover: linear_pave_hand,
+        gallery:[linear_pave_top,linear_pave_bottom,linear_pave_left,linear_pave_right]
       }
     }
   },
@@ -196,7 +350,8 @@ export const ringProducts = [
     images: {
       'White Gold': {
         main: linear_chain,
-        hover: linear_chain_hand
+        hover: linear_chain_hand,
+        gallery:[linear_chain_top,linear_chain_bottom,linear_chain_left,linear_chain_right]
       }
     }
   },
@@ -218,11 +373,13 @@ export const ringProducts = [
     images: {
       'White Gold': {
         main: baby_snow_white_gold,
-        hover: baby_snow_white_gold_hand
+        hover: baby_snow_white_gold_hand,
+        gallery:[baby_snow_white_gold_top,baby_snow_white_gold_bottom,baby_snow_white_gold_left,baby_snow_white_gold_right]
       },
       'Yellow Gold': {
-        main: baby_snow_white_gold,
-        hover: baby_snow_white_gold_hand
+        main: baby_snow_yellow_gold,
+        hover: baby_snow_yellow_gold_hand,
+        gallery:[baby_snow_yellow_gold_top,baby_snow_yellow_gold_bottom,baby_snow_yellow_gold_left,baby_snow_yellow_gold_right]
       }
     }
   },
@@ -244,11 +401,15 @@ export const ringProducts = [
     images: {
       'White Gold': {
         main: up_and_down_white_gold,
-        hover: up_and_down_white_gold_hand
+        hover: up_and_down_white_gold_hand,
+        gallery:[up_and_down_white_gold_top,up_and_down_white_gold_bottom,up_and_down_white_gold_left,up_and_down_white_gold_right]
       },
       'Rose Gold': {
         main: up_and_down_rose_gold,
-        hover: up_and_down_rose_gold_hand
+        hover: up_and_down_rose_gold_hand,
+        gallery:[
+          up_and_down_rose_gold_top,up_and_down_rose_gold_bottom,up_and_down_rose_gold_left,up_and_down_rose_gold_right
+        ]
       }
     }
   },
@@ -270,7 +431,8 @@ export const ringProducts = [
     images: {
       'White Gold': {
         main: dome_ring,
-        hover: dome_ring_hand
+        hover: dome_ring_hand,
+        gallery:[dome_ring_top,dome_ring_bottom,dome_ring_left,dome_ring_right]
       }
     }
   },
@@ -292,7 +454,8 @@ export const ringProducts = [
     images: {
       'Yellow Gold': {
         main: love_morse_code,
-        hover: love_morse_code_hand
+        hover: love_morse_code_hand,
+        gallery:[love_morse_code_top,love_morse_code_bottom,love_morse_code_left,love_morse_code_right]
       }
     }
   },
@@ -314,7 +477,8 @@ export const ringProducts = [
     images: {
       'Yellow Gold': {
         main: wavy_gold,
-        hover: wavy_gold_hand
+        hover: wavy_gold_hand,
+        gallery:[wavy_gold_top,wavy_gold_bottom,wavy_gold_left,wavy_gold_right]
       }
     }
   },
@@ -336,7 +500,8 @@ export const ringProducts = [
     images: {
       'Yellow Gold': {
         main: statement_galet,
-        hover: statement_galet_hand
+        hover: statement_galet_hand,
+        gallery:[statement_galet_top,statement_galet_bottom,statement_galet_right,statement_galet_left]
       }
     }
   }

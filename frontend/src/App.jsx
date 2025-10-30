@@ -21,8 +21,8 @@ export default function App() {
         <main className="flex-1">
           <Routes>
             <Route element={<Layout />}>
-              <Route path="/v2" element={<PrestoHomepage />} />
-            <Route path="/" element={<Homepage />} />
+              <Route path="/" element={<PrestoHomepage />} />
+            <Route path="/v2" element={<Homepage />} />
             <Route path="/diamonds" element={<DiamondPage />} />
             <Route path="/diamonds/:id" element={<DiamondDetailsPage />} />
             <Route path="/jewelry" element={<JewelryPage />} />
@@ -36,3 +36,4 @@ export default function App() {
     </Router>
   );
 }
+

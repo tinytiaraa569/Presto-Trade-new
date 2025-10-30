@@ -138,13 +138,16 @@ const ProductCard = ({
         )}
 
         {/* Product Image */}
-        <motion.img
-          src={isHovered && currentImages.hover ? currentImages.hover : currentImages.main}
-          alt={product.name}
-          className="w-full aspect-[3/4] object-cover"
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.3 }}
-        />
+       <div className="aspect-[3/4] w-fit flex items-center justify-center bg-stone-200  overflow-hidden">
+  <motion.img
+    src={isHovered && currentImages.hover ? currentImages.hover : currentImages.main}
+    alt={product.name}
+    className="max-h-[80%] max-w-[80%] object-contain transition-transform duration-300"
+    whileHover={{ scale: 1.05 }}
+    transition={{ duration: 0.3 }}
+  />
+</div>
+
       </div>
 
       {/* Product Info */}

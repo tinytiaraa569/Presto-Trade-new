@@ -69,7 +69,7 @@ const DiamondCard = ({ diamond, isFavorite, onToggleFavorite, index }) => {
           <span className="text-xs text-gray-500">{diamond.certification}</span>
         </div>
 
-        <button onClick={handleViewDetails} className="w-full mt-4 bg-black text-white py-2.5 rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium">
+        <button onClick={handleViewDetails} className="w-full mt-4 bg-royalblue text-white py-2.5 rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium">
           View Details
         </button>
       </div>

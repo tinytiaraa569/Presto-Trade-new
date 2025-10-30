@@ -10,6 +10,21 @@ import oval_fancy_side from "../assets/diamonds/oval_fancy_side_diamond.png";
 import oval_fancy_hand from "../assets/diamonds/oval_fancy_diamond.png";
 import oval_fancy_video from "../assets/daimond_video.mp4";
 
+
+import round  from "../assets/images/SHAPE_01.png";
+import princess  from "../assets/images/SHAPE_11.png";
+import cushion  from "../assets/images/SHAPE_06.png";
+import oval  from "../assets/images/SHAPE_05.png";
+import heart  from "../assets/images/SHAPE_25.png";
+import marquise  from "../assets/images/SHAPE_14.png";
+import radiant  from "../assets/images/SHAPE_17.png";
+import emerald  from "../assets/images/SHAPE_19.png";
+import asscher  from "../assets/images/SHAPE_08.png";
+import pear  from "../assets/images/SHAPE_03.png";
+
+
+
+
 // Diamond Data Structure
 // export const diamondData = {
 //   types: {
@@ -135,7 +150,11 @@ export const diamondData = {
                     E: ["IF", "VVS1", "VVS2", "VS1"],
                     F: ["VVS1", "VVS2", "VS1", "VS2"],
                     G: ["VS1", "VS2", "SI1"],
-                    H: ["SI1", "SI2"]
+                    H: ["SI1", "SI2"],
+                    I: ["SI1", "SI2"],
+                    J: ["SI1", "SI2"],
+                    K: ["SI1", "SI2"],
+                    L: ["SI1", "SI2"]
                   }
                 },
                 princess: {
@@ -450,19 +469,18 @@ export const diamondData = {
     }
   },
 
-  shapes: {
-    round: "●",
-    princess: "◆",
-    cushion: "◈",
-    oval: "⬭",
-    heart: "♥",
-    marquise: "◊",
-    radiant: "◇",
-    emerald: "▭",
-    asscher: "◫",
-    pear: "◐"
-  },
-
+shapes : {
+  round: { img: round, symbol: "●" },
+  princess: { img: princess, symbol: "◆" },
+  cushion: { img: cushion, symbol: "◈" },
+  oval: { img: oval, symbol: "⬭" },
+  heart: { img: heart, symbol: "♥" },
+  marquise: { img: marquise, symbol: "◊" },
+  radiant: { img: radiant, symbol: "◇" },
+  emerald: { img: emerald, symbol: "▭" },
+  asscher: { img: asscher, symbol: "◫" },
+  pear: { img: pear, symbol: "◐" },
+},
   attributes: {
     cut: ["Ideal", "Excellent", "Very Good", "Good"],
     polish: ["Excellent", "Very Good", "Good"],
@@ -493,6 +511,42 @@ export const diamondProducts = [
     certification: 'None',
     certNumber: null,
     price: 150,
+    measurements: {
+      length: 3.0,
+      width: 3.0,
+      depth: 1.8,
+      depthPercentage: 60.0,
+      tablePercentage: 57.0
+    },
+    description: 'Small round brilliant melee diamond perfect for accent stones in jewelry settings.',
+    sku: 'NAT-MEL-STD-RND-001',
+    inStock: true,
+    quantity: 100,
+    images: {
+      main: brilliant_round_main,
+      gallery: [brilliant_round_main, brilliant_round_side],
+      hover: brilliant_round_side
+    },
+    videos: []
+  },
+   {
+    id: 101,
+    type: 'Natural',
+    category: 'natural-melee',
+    categoryName: 'Natural Melee',
+    subcategory: 'Standard',
+    name: 'Round Brilliant Melee Diamond',
+    shape: 'Round',
+    carat: 0.10,
+    color: 'G',
+    clarity: 'VS1',
+    cut: 'Very Good',
+    polish: 'Very Good',
+    symmetry: 'Very Good',
+    fluorescence: 'None',
+    certification: 'None',
+    certNumber: null,
+    price: 850,
     measurements: {
       length: 3.0,
       width: 3.0,
@@ -1866,6 +1920,22 @@ export const getCategoriesForType = (typeKey) => {
     name: categories[key].name
   }));
 };
+
+export const getAllCategories = () => {
+  const categories = [];
+
+  Object.values(diamondData.types || {}).forEach(type => {
+    Object.entries(type.categories || {}).forEach(([key, value]) => {
+      categories.push({
+        id: key,
+        name: value.name,
+      });
+    });
+  });
+
+  return categories;
+};
+
 
 export const getSubcategoriesForCategory = (typeKey, categoryKey) => {
   const normalizedType = typeKey.toLowerCase().replace('-grown', '');

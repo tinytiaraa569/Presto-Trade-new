@@ -2,14 +2,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Heart, Award } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import DiamondData, { diamondData } from '../pages/DiamondData';
 
 const DiamondListItem = ({ diamond, isFavorite, onToggleFavorite, index }) => {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const shapes = diamondData.shapes;
+  console.log(shapes, "shapes");
+  
+  const shapeKey = diamond.shape?.toLowerCase();
+  const shapeData = shapes?.[shapeKey];
 
   const handleViewDetails = () => {
     navigate(`/diamonds/${diamond.id}`);
-    
-  window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -17,62 +22,81 @@ const DiamondListItem = ({ diamond, isFavorite, onToggleFavorite, index }) => {
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.02 }}
-  
       className="bg-white border border-gray-200 hover:border-gray-400 transition-all duration-200 rounded-lg overflow-hidden"
     >
       <div className="flex items-center p-4 gap-6">
         {/* Left: Basic Info */}
-        <div     onClick={handleViewDetails} className="flex-shrink-0 min-w-[280px]">
-          <div className="flex items-start gap-2 mb-1.5">
-            <h3 className="text-sm font-medium text-gray-900 leading-tight flex-1">{diamond.name}</h3>
-            {diamond.badge && (
-              <span className="bg-gray-900 text-white text-[10px] px-2 py-0.5 rounded-full flex-shrink-0 whitespace-nowrap">
-                {diamond.badge}
-              </span>
-            )}
+        <div onClick={handleViewDetails} className="flex items-start gap-4 flex-shrink-0 min-w-[280px] cursor-pointer">
+          {/* Diamond Shape Icon */}
+          <div className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0 hover:from-blue-100 hover:to-blue-200 transition-all">
+            {shapeData?.img ? (
+              <img 
+                src={shapeData.img} 
+                alt={diamond.shape}
+                className="w-16 h-16 object-contain filter brightness-0"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'block';
+                }}
+              />
+            ) : null}
+            <span className="text-2xl text-royalblue" style={{ display: shapeData?.img ? 'none' : 'block' }}>
+              {shapeData?.symbol || '◆'}
+            </span>
           </div>
-          <p className="text-[11px] text-gray-400 font-mono mb-2">{diamond.sku}</p>
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-[11px] text-gray-600 bg-gray-50 px-2 py-0.5 rounded">{diamond.type}</span>
-            {diamond.certification && diamond.certification !== 'None' && (
-              <div className="flex items-center gap-1 bg-gray-50 px-2 py-0.5 rounded">
-                <Award className="w-3 h-3 text-gray-500" />
-                <span className="text-[11px] text-gray-600">{diamond.certification}</span>
-              </div>
-            )}
+
+          <div className="flex-1 min-w-0">
+            <div className="flex items-start gap-2 mb-1.5">
+              <h3 className="text-sm md:text-md font-medium text-gray-900 leading-tight flex-1">{diamond.name}</h3>
+              {diamond.badge && (
+                <span className="bg-gray-900 text-white text-[10px] px-2 py-0.5 rounded-full flex-shrink-0 whitespace-nowrap">
+                  {diamond.badge}
+                </span>
+              )}
+            </div>
+            <p className="text-[11px] text-gray-400 font-mono mb-2">{diamond.sku}</p>
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-[11px] text-gray-600 bg-gray-50 px-2 py-0.5 rounded">{diamond.type}</span>
+              {diamond.certification && diamond.certification !== 'None' && (
+                <div className="flex items-center gap-1 bg-gray-50 px-2 py-0.5 rounded">
+                  <Award className="w-3 h-3 text-gray-500" />
+                  <span className="text-[11px] text-gray-600">{diamond.certification}</span>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
         {/* Center: Specifications Grid */}
         <div className="flex-1 grid grid-cols-6 gap-4 px-6 border-l border-r border-gray-100 min-w-0">
           <div className="text-center">
-            <p className="text-xs font-medium text-gray-900 truncate">{diamond.shape}</p>
-            <p className="text-[10px] text-gray-400 mt-0.5 uppercase tracking-wider">Shape</p>
+            <p className="text-sm md:text-md font-medium text-gray-900 truncate">{diamond.shape}</p>
+            <p className="text-[10px] md:text-xs text-gray-400 mt-0.5 uppercase tracking-wider">Shape</p>
           </div>
 
           <div className="text-center">
-            <p className="text-xs font-medium text-gray-900 truncate">{diamond.carat} ct</p>
-            <p className="text-[10px] text-gray-400 mt-0.5 uppercase tracking-wider">Carat</p>
+            <p className="text-sm md:text-md font-medium text-gray-900 truncate">{diamond.carat} ct</p>
+            <p className="text-[10px] md:text-xs text-gray-400 mt-0.5 uppercase tracking-wider">Carat</p>
           </div>
 
           <div className="text-center">
-            <p className="text-xs font-medium text-gray-900 truncate">{diamond.color}</p>
-            <p className="text-[10px] text-gray-400 mt-0.5 uppercase tracking-wider">Color</p>
+            <p className="text-sm md:text-md font-medium text-gray-900 truncate">{diamond.color}</p>
+            <p className="text-[10px] md:text-xs text-gray-400 mt-0.5 uppercase tracking-wider">Color</p>
           </div>
 
           <div className="text-center">
-            <p className="text-xs font-medium text-gray-900 truncate">{diamond.clarity}</p>
-            <p className="text-[10px] text-gray-400 mt-0.5 uppercase tracking-wider">Clarity</p>
+            <p className="text-sm md:text-md font-medium text-gray-900 truncate">{diamond.clarity}</p>
+            <p className="text-[10px] md:text-xs text-gray-400 mt-0.5 uppercase tracking-wider">Clarity</p>
           </div>
 
           <div className="text-center">
-            <p className="text-xs font-medium text-gray-900 truncate">{diamond.cut}</p>
-            <p className="text-[10px] text-gray-400 mt-0.5 uppercase tracking-wider">Cut</p>
+            <p className="text-sm md:text-md font-medium text-gray-900 truncate">{diamond.cut}</p>
+            <p className="text-[10px] md:text-xs text-gray-400 mt-0.5 uppercase tracking-wider">Cut</p>
           </div>
 
           <div className="text-center">
-            <p className="text-xs font-medium text-gray-900 truncate">{diamond.polish}</p>
-            <p className="text-[10px] text-gray-400 mt-0.5 uppercase tracking-wider">Polish</p>
+            <p className="text-sm md:text-md font-medium text-gray-900 truncate">{diamond.polish}</p>
+            <p className="md:text-xs text-[10px] text-gray-400 mt-0.5 uppercase tracking-wider">Polish</p>
           </div>
         </div>
 
@@ -97,7 +121,7 @@ const DiamondListItem = ({ diamond, isFavorite, onToggleFavorite, index }) => {
                 }`}
               />
             </button>
-            <button onClick={handleViewDetails} className="px-4 py-2 bg-gray-900 text-white text-xs font-medium rounded-lg hover:bg-gray-800 transition-colors whitespace-nowrap">
+            <button onClick={handleViewDetails} className="px-4 py-2 bg-royalblue text-white text-xs font-medium rounded-lg hover:bg-gray-800 transition-colors whitespace-nowrap">
               View Details
             </button>
             <button className="px-4 py-2 border border-gray-300 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-50 transition-colors whitespace-nowrap">

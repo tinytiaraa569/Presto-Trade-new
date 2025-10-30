@@ -432,7 +432,7 @@ export default function Homepage() {
   return (
     <div className="relative bg-white text-gray-900">
       {/* Hero Slider */}
-      <section className="relative h-[650px] overflow-hidden bg-gray-50">
+      <section className="relative h-[750px] overflow-hidden bg-gray-50">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}

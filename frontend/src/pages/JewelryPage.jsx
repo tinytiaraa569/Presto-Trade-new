@@ -231,7 +231,7 @@ const JewelryPage = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.6 }}
-        className={`border-b border-gray-200 bg-white z-40  ${isSticky ? 'sticky top-20' : ''}`}
+        className={`border-b border-gray-200 bg-white z-40  ${isSticky ? 'sticky top-12 md:top-20' : ''}`}
       >
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-center gap-8 overflow-x-auto">
@@ -254,7 +254,7 @@ const JewelryPage = () => {
       </motion.div>
 
       {/* Desktop Filter Bar */}
-      <div className={`border-b border-gray-300 bg-white z-40 hidden md:block transition-all duration-300  ${isSticky ? 'sticky top-32' : ''}`}>
+      <div className={`border-b border-gray-300 bg-white z-40 hidden md:block transition-all duration-300  ${isSticky ? 'sticky md:top-32' : ''}`}>
         <div className="max-w-7xl mx-auto pl-6 py-4">
           <div className="flex items-center divide-x-2 divide-gray-300 justify-between">
             {/* Center Filters */}
@@ -338,7 +338,7 @@ const JewelryPage = () => {
       </div>
 
       {/* Mobile Filter Bar */}
-      <div className={`border-b border-gray-300 ${isSticky ? 'sticky top-0' : ''} bg-white z-40 md:hidden transition-all duration-300`}>
+      <div className={`border-b border-gray-300 ${isSticky ? 'sticky top-24' : ''} bg-white z-40 md:hidden transition-all duration-300`}>
         <div className="px-4 py-2 flex divide-x divide-gray-300 justify-between gap-4">
           <button
             onClick={() => setMobileFiltersOpen(true)}

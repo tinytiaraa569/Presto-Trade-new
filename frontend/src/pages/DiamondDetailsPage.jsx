@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import DiamondCard from "../components/DiamondCard";
+import DiamondListItem from "../components/DiamondListItem";
+// import { diamondProducts } from "./DiamondData";
 import {
   Heart,
   ShoppingBag,
@@ -16,12 +19,15 @@ import {
   RotateCcw,
   Clock,
   X,
+  List,
+  Grid,
   Phone,
 } from "lucide-react";
 import { useParams } from "react-router-dom";
 
-import { diamondProducts } from "./DiamondData";
+import { diamondData, diamondProducts } from "./DiamondData";
 import { useNavigate } from "react-router-dom";
+import DiamondData from "./DiamondData";
 
 const DiamondDetailsPage = () => {
   const {id} = useParams();
@@ -31,6 +37,14 @@ const DiamondDetailsPage = () => {
   const [activeSection, setActiveSection] = useState('overview');
   const [addedToCart, setAddedToCart] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [viewMode,setViewMode]=useState("list");
+  const [favorites, setFavorites] = useState([]);
+    const toggleFavorite = (id) => {
+    setFavorites((prev) =>
+      prev.includes(id) ? prev.filter((fId) => fId !== id) : [...prev, id]
+    );
+  };
+  const shapes = diamondData.shapes;
     const navigate = useNavigate();
   const backToDiamonds = () => {
     navigate('/diamonds');
@@ -149,12 +163,12 @@ const DiamondDetailsPage = () => {
               <div className="flex items-start justify-between mb-6">
                <div className="flex-1">
   {/* Type */}
-  <p className="text-xs uppercase tracking-widest text-gray-400 mb-3">
+  <p className="text-xs uppercase tracking-widest text-gray-800 mb-3">
     {diamond.type} Diamond
   </p>
 
   {/* Name + Carat + Shape */}
-  <h1 className="text-xl lg:text-2xl font-light text-gray-900 mb-1 tracking-tight">
+  <h1 className="text-xl lg:text-3xl font-medium text-royalblue mb-1 tracking-tight">
     {diamond.name || `${diamond.carat} Carat ${diamond.shape}`}
   </h1>
 
@@ -209,7 +223,7 @@ const DiamondDetailsPage = () => {
                   { label: 'Fluorescence', value: diamond.fluorescence },
                 ].map((spec, idx) => (
                   <div key={idx}>
-                    <div className="text-xs uppercase tracking-widest font-medium text-gray-800 mb-1.5">
+                    <div className="text-xs uppercase tracking-widest font-medium text-royalblue mb-1.5">
                       {spec.label}
                     </div>
                     <div className="text-base text-gray-900 font-light">{spec.value}</div>
@@ -225,7 +239,7 @@ const DiamondDetailsPage = () => {
       onClick={handleAddToCart}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="relative w-full overflow-hidden bg-black text-white border border-black py-4 px-6 text-sm uppercase tracking-widest flex items-center justify-center gap-3 font-medium"
+      className="relative w-full overflow-hidden bg-royalblue text-white border border-royalblue py-4 px-6 text-sm uppercase tracking-widest flex items-center justify-center gap-3 font-medium"
     >
       {/* Sliding White Overlay */}
       <motion.div
@@ -294,9 +308,9 @@ const DiamondDetailsPage = () => {
                   <button
                     key={section}
                     onClick={() => setActiveSection(section)}
-                    className={`pb-3 text-xs uppercase tracking-widest whitespace-nowrap transition-colors relative ${
+                    className={`pb-3 text-xs md:text-sm uppercase tracking-widest whitespace-nowrap transition-colors relative ${
                       activeSection === section
-                        ? 'text-gray-900'
+                        ? 'text-royalblue'
                         : 'text-gray-700 hover:text-gray-900'
                     }`}
                   >
@@ -304,7 +318,7 @@ const DiamondDetailsPage = () => {
                     {activeSection === section && (
                       <motion.div
                         layoutId="activeTab"
-                        className="absolute bottom-0 left-0 right-0 h-px bg-black"
+                        className="absolute bottom-0 left-0 right-0 h-px bg-royalblue"
                       />
                     )}
                   </button>
@@ -323,7 +337,7 @@ const DiamondDetailsPage = () => {
                 >
                   {activeSection === 'overview' && (
                     <div className="space-y-8">
-                      <p className="text-gray-600 leading-relaxed font-light text-base">
+                      <p className="text-gray-950 leading-relaxed font-light text-lg">
                         {diamond.detailedDescription || diamond.description}
                       </p>
                       <div className="grid grid-cols-2 gap-4">
@@ -334,10 +348,10 @@ const DiamondDetailsPage = () => {
                           { label: 'Category', value: diamond.category },
                         ].map((item, idx) => (
                           <div key={idx} className="py-4 border-t border-gray-100">
-                            <div className="text-xs uppercase tracking-widest text-gray-400 mb-2">
+                            <div className="md:text-sm text-xs uppercase tracking-widest text-royalblue mb-2">
                               {item.label}
                             </div>
-                            <div className="text-gray-900 font-light">{item.value}</div>
+                            <div className="text-gray-900 text-xs md:text-lg font-light">{item.value}</div>
                           </div>
                         ))}
                       </div>
@@ -355,7 +369,7 @@ const DiamondDetailsPage = () => {
                         diamond.measurements.lengthToWidthRatio && { label: 'L/W Ratio', value: diamond.measurements.lengthToWidthRatio },
                       ].filter(Boolean).map((item, idx) => (
                         <div key={idx} className="py-4 border-t border-gray-100">
-                          <div className="text-xs uppercase tracking-widest text-gray-400 mb-2">
+                          <div className="text-xs uppercase tracking-widest text-royalblue mb-2">
                             {item.label}
                           </div>
                           <div className="text-gray-900 font-light text-lg">{item.value}</div>
@@ -434,7 +448,103 @@ const DiamondDetailsPage = () => {
 
    
       </div>
-               <section className="relative w-full h-[70vh] my-20 overflow-hidden">
+      <section className=" px-4 md:px-20">
+        {/* Main Diamond Listing Section */}
+
+
+{/* Recently Viewed Section */}
+
+{diamondProducts.length > 0 && (
+  <section className="mt-20">
+    <div className="flex mb-4 md:mb-8 justify-between items-center">
+
+    
+    <h2 className="text-xl md:text-2xl font-light text-gray-900  text-center">
+      Recently Viewed Diamonds
+    </h2>
+    <div className="flex border border-gray-300 rounded overflow-hidden">
+  <button
+    onClick={() => setViewMode("grid")}
+    className={`p-2 ${
+      viewMode === "grid"
+        ? "bg-gray-900 text-white"
+        : "text-gray-600 hover:bg-gray-50"
+    }`}
+  >
+    <Grid className="w-4 h-4" />
+  </button>
+  <button
+    onClick={() => setViewMode("list")}
+    className={`p-2 ${
+      viewMode === "list"
+        ? "bg-gray-900 text-white"
+        : "text-gray-600 hover:bg-gray-50"
+    }`}
+  >
+    <List className="w-4 h-4" />
+  </button>
+</div>
+</div>
+   
+  <AnimatePresence mode="wait">
+  {diamondProducts.slice(0, 4).length === 0 ? (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="text-center py-20"
+    >
+      <p className="text-gray-500 mb-4">No diamonds found</p>
+      <button
+        onClick={clearFilters}
+        className="text-sm text-gray-900 underline"
+      >
+        Clear filters
+      </button>
+    </motion.div>
+  ) : viewMode === "list" ? (
+    <motion.div
+      key="list"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="space-y-3"
+    >
+      {diamondProducts.slice(0, 4).map((diamond, index) => (
+        <DiamondListItem
+          key={diamond.id}
+          diamond={diamond}
+          isFavorite={favorites.includes(diamond.id)}
+          onToggleFavorite={toggleFavorite}
+          index={index}
+        />
+      ))}
+    </motion.div>
+  ) : (
+    <motion.div
+      key="grid"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
+    >
+      {diamondProducts.slice(0, 4).map((diamond, index) => (
+        <DiamondCard
+          key={diamond.id}
+          diamond={diamond}
+          isFavorite={favorites.includes(diamond.id)}
+          onToggleFavorite={toggleFavorite}
+          index={index}
+        />
+      ))}
+    </motion.div>
+  )}
+</AnimatePresence>
+
+  </section>
+)}
+
+      </section>
+               <section className="relative w-full h-[70vh] mt-20 overflow-hidden">
       {/* Background Video */}
       <video
         className="absolute inset-0 w-full h-full object-cover"
@@ -473,7 +583,7 @@ const DiamondDetailsPage = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="mt-8 flex gap-4"
+          className="mt-8 flex md:flex-row flex-col gap-4"
         >
           <button className="px-8 py-3 bg-white text-black font-medium rounded-full hover:bg-gray-200 transition">
             Explore Collection
@@ -484,6 +594,83 @@ const DiamondDetailsPage = () => {
         </motion.div>
       </div>
     </section>
+{/* <section className="relative overflow-hidden py-12 bg-white">
+  <motion.div
+    className="flex gap-12 items-center"
+    initial={{ x: 0 }}
+    animate={{ x: ["0%", "-100%"] }}
+    transition={{
+      repeat: Infinity,
+      duration: 25,
+      ease: "linear",
+    }}
+  >
+    {Object.entries(shapes).map(([key, { img }]) => (
+      <div
+        key={key}
+        className="flex-shrink-0 flex flex-col items-center justify-center w-40"
+      >
+        <img
+          src={img}
+          alt={key}
+          className="w-28 h-28 object-contain grayscale hover:grayscale-0 transition duration-500"
+        />
+        <p className="mt-2 text-sm font-medium text-gray-700 capitalize">
+          {key}
+        </p>
+      </div>
+    ))}
+
+
+    {Object.entries(shapes).map(([key, { img }]) => (
+      <div
+        key={`${key}-dup`}
+        className="flex-shrink-0 flex flex-col items-center justify-center w-40"
+      >
+        <img
+          src={img}
+          alt={key}
+          className="w-28 h-28 object-contain grayscale hover:grayscale-0 transition duration-500"
+        />
+        <p className="mt-2 text-sm font-medium text-gray-700 capitalize">
+          {key}
+        </p>
+      </div>
+    ))}
+  </motion.div>
+
+
+  <div className="absolute top-0 left-0 w-32 h-full bg-gradient-to-r from-white to-transparent pointer-events-none" />
+  <div className="absolute top-0 right-0 w-32 h-full bg-gradient-to-l from-white to-transparent pointer-events-none" />
+</section> */}
+<section className="py-16 bg-white">
+  <div className="max-w-6xl mx-auto px-6">
+    <h2 className="text-center text-2xl md:text-3xl font-light tracking-wide text-gray-800 mb-10">
+      Explore Diamond Shapes
+    </h2>
+
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 place-items-center">
+      {Object.entries(shapes).map(([key, { img }]) => (
+        <div
+          key={key}
+          className="flex flex-col items-center text-center group"
+        >
+          <div className="relative w-24 h-24 mb-3">
+            <img
+              src={img}
+              alt={key}
+              className="w-full h-full object-contain grayscale group-hover:grayscale-0 transition duration-500"
+            />
+          </div>
+          <p className="text-sm font-medium text-gray-700 capitalize group-hover:text-black transition">
+            {key}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
     </div>
   );
 };
